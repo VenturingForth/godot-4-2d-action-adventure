@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bimp4bxjrxed8"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_2c6mq"]
+[ext_resource type="Texture2D" uid="uid://du5i61kik4e6a" path="res://Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Item.png" id="1_jv7ow"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsilr"]
+radius = 7.0
+height = 16.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_2c6mq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xsilr")
+
+[node name="Item" type="Sprite2D" parent="."]
+texture = ExtResource("1_jv7ow")
