@@ -35,6 +35,11 @@ folder_colors={
 "res://Scenes/": "blue"
 }
 
+[global_group]
+
+wall="Immovable walls"
+pushable="Physics objects that the player can move by walking into it."
+
 [input]
 
 move_right={
