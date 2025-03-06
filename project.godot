@@ -21,7 +21,6 @@ SceneManager="*res://Scenes/SceneManager/scene_manager.tscn"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
