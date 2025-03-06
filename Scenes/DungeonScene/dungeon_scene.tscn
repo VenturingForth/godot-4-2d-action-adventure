@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bb0wgn1wn01xc"]
+[gd_scene load_steps=16 format=4 uid="uid://bb0wgn1wn01xc"]
 
 [ext_resource type="PackedScene" uid="uid://bimp4bxjrxed8" path="res://Scenes/Player/player.tscn" id="1_akwjv"]
 [ext_resource type="PackedScene" uid="uid://x4psjxrcu8yi" path="res://Scenes/SceneEntrance/scene_entrance.tscn" id="2_y8m2p"]
@@ -812,6 +812,12 @@ terrain_set_0/terrain_0/name = "DungeonWalls"
 terrain_set_0/terrain_0/color = Color(9.43363e-06, 0.319962, 0.871838, 1)
 sources/0 = SubResource("TileSetAtlasSource_os5e0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft7wx"]
+size = Vector2(6, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km0dr"]
+size = Vector2(15, 7.5)
+
 [node name="DungeonScene" type="Node2D"]
 
 [node name="SceneEntrance" parent="." instance=ExtResource("2_y8m2p")]
@@ -859,6 +865,22 @@ zoom = Vector2(5, 5)
 
 [node name="LockedDoor2" parent="." instance=ExtResource("5_cae3h")]
 position = Vector2(74, 8)
+
+[node name="PuzzleWalls" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleWalls"]
+position = Vector2(-65, -24)
+shape = SubResource("RectangleShape2D_ft7wx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PuzzleWalls"]
+position = Vector2(69, 7)
+shape = SubResource("RectangleShape2D_ft7wx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PuzzleWalls"]
+position = Vector2(8, -52)
+shape = SubResource("RectangleShape2D_km0dr")
 
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]
