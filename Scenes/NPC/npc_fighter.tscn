@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjbf7vymukivf"]
+
+[ext_resource type="Script" path="res://Scenes/NPC/npc_fighter.gd" id="1_qjg6n"]
+[ext_resource type="Texture2D" uid="uid://bigka201vdqhl" path="res://Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SpriteSheet.png" id="1_qunso"]
+[ext_resource type="Texture2D" uid="uid://m6wcp811phn6" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/DialogBoxFaceset.png" id="3_gk3qx"]
+[ext_resource type="Texture2D" uid="uid://c3i53vwgq20dt" path="res://Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/Faceset.png" id="4_mrkmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_838hw"]
+size = Vector2(12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xktuc"]
+atlas = ExtResource("1_qunso")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4ikh"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="NPCFighter" type="StaticBody2D"]
+script = ExtResource("1_qjg6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_838hw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_xktuc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="DialogueBox" type="TextureRect" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 420.0
+offset_right = 318.0
+offset_bottom = 478.0
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("3_gk3qx")
+
+[node name="FaceSet" type="TextureRect" parent="CanvasLayer/DialogueBox"]
+offset_left = 5.13513
+offset_top = 12.7027
+offset_right = 45.1351
+offset_bottom = 52.7027
+texture = ExtResource("4_mrkmq")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 204.0
+offset_top = 471.0
+offset_right = 501.0
+offset_bottom = 538.0
+text = "Hello there..."
+label_settings = SubResource("LabelSettings_h4ikh")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ox2cgqni37k4"]
+[gd_scene load_steps=17 format=4 uid="uid://ox2cgqni37k4"]
 
 [ext_resource type="PackedScene" uid="uid://bimp4bxjrxed8" path="res://Scenes/Player/player.tscn" id="1_hrmwq"]
 [ext_resource type="Texture2D" uid="uid://dux667uykyrp0" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="1_uc4ma"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8xrg5rf0mgjj" path="res://Scenes/BlockScene/block.tscn" id="6_n44l6"]
 [ext_resource type="PackedScene" uid="uid://b3so5f5s2wecr" path="res://Scenes/LockedDoor/locked_door.tscn" id="6_t1l7i"]
 [ext_resource type="PackedScene" uid="uid://bv0aamytl2upk" path="res://Scenes/PuzzleButton/puzzle_button.tscn" id="7_o7oaw"]
+[ext_resource type="PackedScene" uid="uid://cjbf7vymukivf" path="res://Scenes/NPC/npc_fighter.tscn" id="9_80stw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_567k7"]
 texture = ExtResource("1_uc4ma")
@@ -843,6 +844,9 @@ shape = SubResource("RectangleShape2D_idl4o")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="PuzzleWalls"]
 position = Vector2(34.1, 1.365)
 shape = SubResource("RectangleShape2D_idl4o")
+
+[node name="NPCFighter" parent="." instance=ExtResource("9_80stw")]
+position = Vector2(88, 22)
 
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]
