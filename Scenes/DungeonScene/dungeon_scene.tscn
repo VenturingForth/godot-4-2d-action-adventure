@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bb0wgn1wn01xc"]
+[gd_scene load_steps=20 format=4 uid="uid://bb0wgn1wn01xc"]
 
 [ext_resource type="PackedScene" uid="uid://bimp4bxjrxed8" path="res://Scenes/Player/player.tscn" id="1_akwjv"]
 [ext_resource type="PackedScene" uid="uid://x4psjxrcu8yi" path="res://Scenes/SceneEntrance/scene_entrance.tscn" id="2_y8m2p"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://8xrg5rf0mgjj" path="res://Scenes/BlockScene/block.tscn" id="7_jwsl6"]
 [ext_resource type="PackedScene" uid="uid://bi8o1skcykqoi" path="res://Scenes/BlockScene/ice_block.tscn" id="8_fedue"]
 [ext_resource type="PackedScene" uid="uid://c1h3ke23kx3al" path="res://Scenes/PuzzleButton/one_press_puzzle_button.tscn" id="9_uw5kv"]
+[ext_resource type="PackedScene" uid="uid://cjbf7vymukivf" path="res://Scenes/NPC/npc_fighter.tscn" id="10_c5erd"]
+[ext_resource type="Texture2D" uid="uid://covw236vjw628" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Dragon/SpriteSheet.png" id="11_8e2xf"]
+[ext_resource type="Texture2D" uid="uid://jq6g25tkwo46" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Dragon/Faceset.png" id="12_akmjt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3r52"]
 texture = ExtResource("3_lwxtt")
@@ -818,6 +821,10 @@ size = Vector2(6, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km0dr"]
 size = Vector2(15, 7.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_13oeb"]
+atlas = ExtResource("11_8e2xf")
+region = Rect2(0, 0, 16, 16)
+
 [node name="DungeonScene" type="Node2D"]
 
 [node name="SceneEntrance" parent="." instance=ExtResource("2_y8m2p")]
@@ -882,9 +889,26 @@ shape = SubResource("RectangleShape2D_ft7wx")
 position = Vector2(8, -52)
 shape = SubResource("RectangleShape2D_km0dr")
 
+[node name="NPCFighter" parent="." instance=ExtResource("10_c5erd")]
+position = Vector2(15, -138)
+
+[node name="Sprite2D" parent="NPCFighter" index="1"]
+texture = SubResource("AtlasTexture_13oeb")
+
+[node name="NPCIcon" parent="NPCFighter/CanvasLayer/DialogueBoxTexture" index="0"]
+texture = ExtResource("12_akmjt")
+
+[node name="DialogueLabel" parent="NPCFighter/CanvasLayer" index="1"]
+text = "Go away."
+
+[node name="NameLabel" parent="NPCFighter/CanvasLayer" index="2"]
+text = "Green Dragon"
+
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]
 [connection signal="pressed" from="PuzzleButton2" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton2" to="LockedDoor" method="_on_puzzle_button_unpressed"]
 [connection signal="pressed" from="PuzzleButton3" to="LockedDoor2" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton3" to="LockedDoor2" method="_on_puzzle_button_unpressed"]
+
+[editable path="NPCFighter"]
