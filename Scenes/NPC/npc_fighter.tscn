@@ -16,7 +16,7 @@ region = Rect2(0, 0, 16, 16)
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
-[node name="NPCFighter" type="StaticBody2D"]
+[node name="NPCFighter" type="StaticBody2D" groups=["interactable"]]
 script = ExtResource("1_qjg6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -38,6 +38,7 @@ scale = Vector2(3.7, 3.7)
 texture = ExtResource("3_gk3qx")
 
 [node name="FaceSet" type="TextureRect" parent="CanvasLayer/DialogueBox"]
+layout_mode = 0
 offset_left = 5.13513
 offset_top = 12.7027
 offset_right = 45.1351
