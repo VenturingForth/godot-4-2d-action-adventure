@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjbf7vymukivf"]
+[gd_scene load_steps=9 format=3 uid="uid://cjbf7vymukivf"]
 
 [ext_resource type="Script" path="res://Scenes/NPC/npc_fighter.gd" id="1_qjg6n"]
 [ext_resource type="Texture2D" uid="uid://bigka201vdqhl" path="res://Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SpriteSheet.png" id="1_qunso"]
@@ -16,7 +16,11 @@ region = Rect2(0, 0, 16, 16)
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
-[node name="NPCFighter" type="StaticBody2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_q7idh"]
+font_size = 24
+
+[node name="NPCFighter" type="StaticBody2D" groups=["interactable"]]
+process_mode = 3
 script = ExtResource("1_qjg6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,7 +33,7 @@ texture = SubResource("AtlasTexture_xktuc")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="DialogueBox" type="TextureRect" parent="CanvasLayer"]
+[node name="DialogueBoxTexture" type="TextureRect" parent="CanvasLayer"]
 offset_left = 18.0
 offset_top = 420.0
 offset_right = 318.0
@@ -37,17 +41,32 @@ offset_bottom = 478.0
 scale = Vector2(3.7, 3.7)
 texture = ExtResource("3_gk3qx")
 
-[node name="FaceSet" type="TextureRect" parent="CanvasLayer/DialogueBox"]
+[node name="NPCIcon" type="TextureRect" parent="CanvasLayer/DialogueBoxTexture"]
+layout_mode = 0
 offset_left = 5.13513
 offset_top = 12.7027
 offset_right = 45.1351
 offset_bottom = 52.7027
 texture = ExtResource("4_mrkmq")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="DialogueLabel" type="Label" parent="CanvasLayer"]
 offset_left = 204.0
 offset_top = 471.0
-offset_right = 501.0
-offset_bottom = 538.0
+offset_right = 1106.0
+offset_bottom = 613.0
 text = "Hello there..."
 label_settings = SubResource("LabelSettings_h4ikh")
+autowrap_mode = 3
+
+[node name="NameLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.018
+offset_left = 37.0
+offset_top = 425.0
+offset_right = 253.416
+offset_bottom = 447.336
+text = "Obi-Dude Kenobi"
+label_settings = SubResource("LabelSettings_q7idh")
+horizontal_alignment = 1
+vertical_alignment = 1

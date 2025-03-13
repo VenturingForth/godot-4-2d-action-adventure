@@ -38,6 +38,7 @@ folder_colors={
 
 wall="Immovable walls"
 pushable="Physics objects that the player can move by walking into it."
+interactable="Interactable objects and people."
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ox2cgqni37k4"]
+[gd_scene load_steps=20 format=4 uid="uid://ox2cgqni37k4"]
 
 [ext_resource type="PackedScene" uid="uid://bimp4bxjrxed8" path="res://Scenes/Player/player.tscn" id="1_hrmwq"]
 [ext_resource type="Texture2D" uid="uid://dux667uykyrp0" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="1_uc4ma"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b3so5f5s2wecr" path="res://Scenes/LockedDoor/locked_door.tscn" id="6_t1l7i"]
 [ext_resource type="PackedScene" uid="uid://bv0aamytl2upk" path="res://Scenes/PuzzleButton/puzzle_button.tscn" id="7_o7oaw"]
 [ext_resource type="PackedScene" uid="uid://cjbf7vymukivf" path="res://Scenes/NPC/npc_fighter.tscn" id="9_80stw"]
+[ext_resource type="Texture2D" uid="uid://62lmaakvrkv6" path="res://Ninja Adventure - Asset Pack/Actor/Characters/OldMan/SpriteSheet.png" id="10_73cx2"]
+[ext_resource type="Texture2D" uid="uid://lrm7cm7ocy7x" path="res://Ninja Adventure - Asset Pack/Actor/Characters/OldMan/Faceset.png" id="11_yrgx6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_567k7"]
 texture = ExtResource("1_uc4ma")
@@ -791,6 +793,10 @@ size = Vector2(71, 13.0675)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idl4o"]
 size = Vector2(11, 43)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsmm8"]
+atlas = ExtResource("10_73cx2")
+region = Rect2(0, 0, 16, 16)
+
 [node name="GameScene" type="Node2D"]
 
 [node name="GrassLayer" type="TileMapLayer" parent="."]
@@ -848,5 +854,23 @@ shape = SubResource("RectangleShape2D_idl4o")
 [node name="NPCFighter" parent="." instance=ExtResource("9_80stw")]
 position = Vector2(88, 22)
 
+[node name="NPCFighter2" parent="." instance=ExtResource("9_80stw")]
+position = Vector2(170, 62)
+
+[node name="Sprite2D" parent="NPCFighter2" index="1"]
+texture = SubResource("AtlasTexture_dsmm8")
+
+[node name="NPCIcon" parent="NPCFighter2/CanvasLayer/DialogueBoxTexture" index="0"]
+texture = ExtResource("11_yrgx6")
+
+[node name="DialogueLabel" parent="NPCFighter2/CanvasLayer" index="1"]
+text = "Have you tried opening that dumb cave to the west? Hehehehe..."
+
+[node name="NameLabel" parent="NPCFighter2/CanvasLayer" index="2"]
+text = "Crabby Gary"
+
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]
+
+[editable path="NPCFighter"]
+[editable path="NPCFighter2"]
