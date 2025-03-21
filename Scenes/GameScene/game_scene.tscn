@@ -853,9 +853,11 @@ shape = SubResource("RectangleShape2D_idl4o")
 
 [node name="NPCFighter" parent="." instance=ExtResource("9_80stw")]
 position = Vector2(88, 22)
+dialogue_lines = Array[String](["Hello there!", "Now that's a name I've not heard in a long time...", "A long time..."])
 
 [node name="NPCFighter2" parent="." instance=ExtResource("9_80stw")]
 position = Vector2(170, 62)
+dialogue_lines = Array[String](["A dragon stole my treasure!", "He's in the cave to the west!", "I bet he's a hoarding reptile..."])
 
 [node name="Sprite2D" parent="NPCFighter2" index="1"]
 texture = SubResource("AtlasTexture_dsmm8")
