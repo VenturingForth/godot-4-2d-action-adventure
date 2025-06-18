@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://x4psjxrcu8yi" path="res://Scenes/SceneEntrance/scene_entrance.tscn" id="2_y8m2p"]
 [ext_resource type="Texture2D" uid="uid://lllcn2l1mwpx" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="3_lwxtt"]
 [ext_resource type="Texture2D" uid="uid://bp7qhltyfuju6" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="3_xl05j"]
-[ext_resource type="Script" path="res://Scenes/DungeonScene/secret_wall_layer.gd" id="4_0nme1"]
+[ext_resource type="Script" uid="uid://cn4jypygxve4g" path="res://Scenes/DungeonScene/secret_wall_layer.gd" id="4_0nme1"]
 [ext_resource type="PackedScene" uid="uid://b3so5f5s2wecr" path="res://Scenes/LockedDoor/locked_door.tscn" id="5_cae3h"]
 [ext_resource type="PackedScene" uid="uid://bv0aamytl2upk" path="res://Scenes/PuzzleButton/puzzle_button.tscn" id="6_vocpi"]
 [ext_resource type="PackedScene" uid="uid://8xrg5rf0mgjj" path="res://Scenes/BlockScene/block.tscn" id="7_jwsl6"]

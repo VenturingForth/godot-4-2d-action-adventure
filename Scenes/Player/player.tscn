@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bimp4bxjrxed8"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_2c6mq"]
+[ext_resource type="Script" uid="uid://cesurf2xx5b87" path="res://Scenes/Player/player.gd" id="1_2c6mq"]
 [ext_resource type="Texture2D" uid="uid://7hbfpt4743y1" path="res://Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SeparateAnim/Walk.png" id="2_uu42c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ke4b"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5o2au5aue6fo"]
 
 [ext_resource type="Texture2D" uid="uid://841dl87eohgg" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_4a42f"]
-[ext_resource type="Script" path="res://Scenes/Switch/switch.gd" id="1_hmkvk"]
+[ext_resource type="Script" uid="uid://bhpkwt6far36t" path="res://Scenes/Switch/switch.gd" id="1_hmkvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sk0bl"]
 size = Vector2(16, 9)

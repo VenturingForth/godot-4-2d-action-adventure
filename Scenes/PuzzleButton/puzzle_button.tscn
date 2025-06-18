@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bv0aamytl2upk"]
 
-[ext_resource type="Script" path="res://Scenes/PuzzleButton/puzzle_button.gd" id="1_oabyr"]
+[ext_resource type="Script" uid="uid://bd28o3a8u3u4x" path="res://Scenes/PuzzleButton/puzzle_button.gd" id="1_oabyr"]
 [ext_resource type="Texture2D" uid="uid://841dl87eohgg" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_n0a8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q20uh"]
